@@ -26,12 +26,6 @@
       margin-bottom: 20px;
       color: #1f2937;
     }
-    .step {
-      display: none;
-    }
-    .step.active {
-      display: block;
-    }
     label {
       font-weight: 600;
       margin-top: 15px;
@@ -77,102 +71,85 @@
   <div class="container">
     <h2>Formulir Rekomendasi Kontrasepsi</h2>
     <form id="form-kb">
-      <div class="step active" data-step="0">
-        <label>1. Usia:
-          <select name="usia">
-            <option value="<20 tahun">&lt;20 tahun</option>
-            <option value="20-35 tahun">20-35 tahun</option>
-            <option value=">35 tahun">>35 tahun</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="1">
-        <label>2. Tujuan ber-KB:
-          <select name="tujuan">
-            <option value="Menunda kehamilan">Menunda kehamilan</option>
-            <option value="Mengatur jarak">Mengatur jarak kehamilan</option>
-            <option value="Tidak ingin hamil">Tidak ingin hamil</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="2">
-        <label>3. Sedang menyusui:
-          <select name="menyusui">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="3">
-        <label>4. Merokok:
-          <select name="merokok">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="4">
-        <label>5. Masalah hormonal:
-          <select name="hormonal">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="5">
-        <label>6. Riwayat penyakit tekanan darah tinggi/jantung/diabetes:
-          <select name="penyakit_kronis">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="6">
-        <label>7. Riwayat penyakit menular seksual:
-          <select name="pms">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="7">
-        <label>8. Riwayat radang panggul:
-          <select name="radang_panggul">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="8">
-        <label>9. Riwayat kanker serviks/payudara:
-          <select name="kanker">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
-      <div class="step" data-step="9">
-        <label>10. Masalah haid (seperti darah berlebihan):
-          <select name="haid">
-            <option value="Ya">Ya</option>
-            <option value="Tidak">Tidak</option>
-          </select>
-        </label>
-      </div>
+      <label>1. Usia:
+        <select name="usia">
+          <option value="<20 tahun">&lt;20 tahun</option>
+          <option value="20-35 tahun">20-35 tahun</option>
+          <option value=">35 tahun">>35 tahun</option>
+        </select>
+      </label>
 
-      <button type="button" id="next-btn">Lanjut</button>
+      <label>2. Tujuan ber-KB:
+        <select name="tujuan">
+          <option value="Menunda kehamilan">Menunda kehamilan</option>
+          <option value="Mengatur jarak">Mengatur jarak kehamilan</option>
+          <option value="Tidak ingin hamil">Tidak ingin hamil</option>
+        </select>
+      </label>
+
+      <label>3. Sedang menyusui:
+        <select name="menyusui">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>4. Merokok:
+        <select name="merokok">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>5. Masalah hormonal:
+        <select name="hormonal">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>6. Riwayat penyakit tekanan darah tinggi/jantung/diabetes:
+        <select name="penyakit_kronis">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>7. Riwayat penyakit menular seksual:
+        <select name="pms">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>8. Riwayat radang panggul:
+        <select name="radang_panggul">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>9. Riwayat kanker serviks/payudara:
+        <select name="kanker">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <label>10. Masalah haid (seperti darah berlebihan):
+        <select name="haid">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
+
+      <button type="submit">Lihat Rekomendasi</button>
     </form>
+
     <div class="result" id="hasil"></div>
   </div>
 
   <script>
-    const form = document.getElementById("form-kb");
-    const steps = Array.from(document.querySelectorAll(".step"));
-    const nextBtn = document.getElementById("next-btn");
-    const hasilDiv = document.getElementById("hasil");
-    let currentStep = 0;
-    const jawaban = {};
-
     const dataRekomendasi = {
   "usia": {
     "<20 tahun": ["Pil progestin", "Pil kombinasi", "Kondom"],
@@ -218,24 +195,12 @@
   }
 };
 
-    nextBtn.addEventListener("click", () => {
-      const stepDiv = steps[currentStep];
-      const select = stepDiv.querySelector("select");
-      jawaban[select.name] = select.value;
-      stepDiv.classList.remove("active");
-      currentStep++;
-      if (currentStep < steps.length) {
-        steps[currentStep].classList.add("active");
-      } else {
-        form.style.display = "none";
-        tampilkanHasil();
-      }
-    });
-
-    function tampilkanHasil() {
+    document.getElementById("form-kb").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const form = new FormData(e.target);
       let hasilSet = null;
-      for (let key in jawaban) {
-        const value = jawaban[key];
+
+      for (let [key, value] of form.entries()) {
         const rekom = dataRekomendasi[key][value];
         if (hasilSet === null) {
           hasilSet = new Set(rekom);
@@ -243,11 +208,13 @@
           hasilSet = new Set(rekom.filter(r => hasilSet.has(r)));
         }
       }
+
       const hasil = Array.from(hasilSet || []);
+      const hasilDiv = document.getElementById("hasil");
       hasilDiv.innerHTML = hasil.length ?
         `<strong>Rekomendasi metode kontrasepsi:</strong><ul>${hasil.map(r => `<li>${r}</li>`).join('')}</ul>` :
         `<strong>Tidak ada metode kontrasepsi yang sesuai dengan semua kriteria.</strong>`;
-    }
+    });
   </script>
 </body>
 </html>
