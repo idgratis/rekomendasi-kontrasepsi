@@ -1,146 +1,202 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rekomendasi Kontrasepsi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; padding: 20px; }
-    label { display: block; margin-top: 10px; }
-    select, button { margin-top: 5px; width: 100%; padding: 8px; }
-    .result { margin-top: 20px; padding: 10px; background: #f1f1f1; border-radius: 5px; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #111827;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #1f2937;
+    }
+    label {
+      font-weight: 600;
+      margin-top: 15px;
+      display: block;
+    }
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      margin-top: 5px;
+      background-color: #f9fafb;
+    }
+    button {
+      margin-top: 25px;
+      width: 100%;
+      padding: 12px;
+      background-color: #2563eb;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .result {
+      margin-top: 30px;
+      background-color: #e0f2fe;
+      border-left: 4px solid #0284c7;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
   </style>
 </head>
 <body>
-  <h2>Formulir Rekomendasi Kontrasepsi</h2>
+  <div class="container">
+    <h2>Formulir Rekomendasi Kontrasepsi</h2>
+    <form id="form-kb">
+      <label>1. Usia:
+        <select name="usia">
+          <option value="<20 tahun">&lt;20 tahun</option>
+          <option value="20-35 tahun">20-35 tahun</option>
+          <option value=">35 tahun">>35 tahun</option>
+        </select>
+      </label>
 
-  <form id="form-kb">
-    <label>1. Usia:
-      <select name="usia">
-        <option value="<20 tahun">&lt;20 tahun</option>
-        <option value="20-35 tahun">20-35 tahun</option>
-        <option value=">35 tahun">>35 tahun</option>
-      </select>
-    </label>
+      <label>2. Tujuan ber-KB:
+        <select name="tujuan">
+          <option value="Menunda kehamilan">Menunda kehamilan</option>
+          <option value="Mengatur jarak">Mengatur jarak kehamilan</option>
+          <option value="Tidak ingin hamil">Tidak ingin hamil</option>
+        </select>
+      </label>
 
-    <label>2. Tujuan ber-KB:
-      <select name="tujuan">
-        <option value="Menunda kehamilan">Menunda kehamilan</option>
-        <option value="Mengatur jarak">Mengatur jarak kehamilan</option>
-        <option value="Tidak ingin hamil">Tidak ingin hamil</option>
-      </select>
-    </label>
+      <label>3. Sedang menyusui:
+        <select name="menyusui">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>3. Sedang menyusui:
-      <select name="menyusui">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>4. Merokok:
+        <select name="merokok">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>4. Merokok:
-      <select name="merokok">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>5. Masalah hormonal:
+        <select name="hormonal">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>5. Masalah hormonal:
-      <select name="hormonal">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>6. Riwayat penyakit tekanan darah tinggi/jantung/diabetes:
+        <select name="penyakit_kronis">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>6. Riwayat penyakit tekanan darah tinggi/jantung/diabetes:
-      <select name="penyakit_kronis">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>7. Riwayat penyakit menular seksual:
+        <select name="pms">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>7. Riwayat penyakit menular seksual:
-      <select name="pms">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>8. Riwayat radang panggul:
+        <select name="radang_panggul">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>8. Riwayat radang panggul:
-      <select name="radang_panggul">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>9. Riwayat kanker serviks/payudara:
+        <select name="kanker">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>9. Riwayat kanker serviks/payudara:
-      <select name="kanker">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <label>10. Masalah haid (seperti darah berlebihan):
+        <select name="haid">
+          <option value="Ya">Ya</option>
+          <option value="Tidak">Tidak</option>
+        </select>
+      </label>
 
-    <label>10. Masalah haid (seperti darah berlebihan):
-      <select name="haid">
-        <option value="Ya">Ya</option>
-        <option value="Tidak">Tidak</option>
-      </select>
-    </label>
+      <button type="submit">Lihat Rekomendasi</button>
+    </form>
 
-    <button type="submit">Lihat Rekomendasi</button>
-  </form>
-
-  <div class="result" id="hasil"></div>
+    <div class="result" id="hasil"></div>
+  </div>
 
   <script>
     const dataRekomendasi = {
-      "usia": {
-        "<20 tahun": ["Pil progestin", "Pil kombinasi", "Kondom"],
-        "20-35 tahun": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "AKDR IUD", "Implant", "Kondom"],
-        ">35 tahun": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "AKDR IUD", "Implant", "Sterilisasi"]
-      },
-      "tujuan": {
-        "Menunda kehamilan": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"],
-        "Mengatur jarak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD"],
-        "Tidak ingin hamil": ["Implant", "AKDR IUD", "Sterilisasi"]
-      },
-      "menyusui": {
-        "Ya": ["Pil progestin", "Suntik 3 bulan", "AKDR IUD", "Kondom"],
-        "Tidak": ["Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "merokok": {
-        "Ya": ["Kondom", "AKDR IUD"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "hormonal": {
-        "Ya": ["AKDR IUD", "Kondom"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "penyakit_kronis": {
-        "Ya": ["AKDR IUD", "Kondom", "Sterilisasi"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "pms": {
-        "Ya": ["Kondom"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "radang_panggul": {
-        "Ya": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "Kondom"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "kanker": {
-        "Ya": ["Kondom", "AKDR IUD"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      },
-      "haid": {
-        "Ya": ["Pil kombinasi", "Implant", "Suntik 1 bulan"],
-        "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
-      }
-    };
+  "usia": {
+    "<20 tahun": ["Pil progestin", "Pil kombinasi", "Kondom"],
+    "20-35 tahun": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "AKDR IUD", "Implant", "Kondom"],
+    ">35 tahun": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "AKDR IUD", "Implant", "Sterilisasi"]
+  },
+  "tujuan": {
+    "Menunda kehamilan": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"],
+    "Mengatur jarak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD"],
+    "Tidak ingin hamil": ["Implant", "AKDR IUD", "Sterilisasi"]
+  },
+  "menyusui": {
+    "Ya": ["Pil progestin", "Suntik 3 bulan", "AKDR IUD", "Kondom"],
+    "Tidak": ["Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "merokok": {
+    "Ya": ["Kondom", "AKDR IUD"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "hormonal": {
+    "Ya": ["AKDR IUD", "Kondom"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "penyakit_kronis": {
+    "Ya": ["AKDR IUD", "Kondom", "Sterilisasi"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "pms": {
+    "Ya": ["Kondom"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "radang_panggul": {
+    "Ya": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "Kondom"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "kanker": {
+    "Ya": ["Kondom", "AKDR IUD"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  },
+  "haid": {
+    "Ya": ["Pil kombinasi", "Implant", "Suntik 1 bulan"],
+    "Tidak": ["Pil progestin", "Pil kombinasi", "Suntik 1 bulan", "Suntik 3 bulan", "Implant", "AKDR IUD", "Kondom"]
+  }
+};
 
     document.getElementById("form-kb").addEventListener("submit", function(e) {
       e.preventDefault();
-
       const form = new FormData(e.target);
       let hasilSet = null;
 
